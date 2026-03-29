@@ -1,4 +1,4 @@
-# 📦 Lost-Found 
+# 📦 LostnFound 
 
 ## 📌 Deskripsi Proyek
 Lost-Found adalah sistem berbasis web yang dirancang khusus untuk lingkungan Fakultas Ilmu Komputer guna membantu mahasiswa, dosen, dan staf dalam melaporkan, mencari, serta mengelola barang yang hilang maupun ditemukan.
