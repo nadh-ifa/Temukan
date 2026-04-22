@@ -17,7 +17,12 @@ return new class extends Migration
             $table->string('location', 150);
             $table->date('date_event');
             $table->string('image')->nullable();
-            $table->enum('status', ['dilaporkan', 'ada_di_resepsionis', 'sudah_diambil', 'ditutup'])->default('dilaporkan');
+            $table->enum('status', [
+                'dilaporkan',
+                'ada_di_resepsionis',
+                'sudah_diambil',
+                'ditutup'
+            ])->default('dilaporkan');
             $table->foreignId('validated_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamp('validated_at')->nullable();
             $table->timestamps();
