@@ -1,7 +1,7 @@
-# 📦 LostnFound 
+# 📦 Temukan 
 
 ## 📌 Deskripsi Proyek
-Lost-Found adalah sistem berbasis web yang dirancang khusus untuk lingkungan Fakultas Ilmu Komputer guna membantu mahasiswa, dosen, dan staf dalam melaporkan, mencari, serta mengelola barang yang hilang maupun ditemukan.
+Temukan adalah sistem berbasis web yang dirancang khusus untuk lingkungan Fakultas Ilmu Komputer guna membantu mahasiswa, dosen, dan staf dalam melaporkan, mencari, serta mengelola barang yang hilang maupun ditemukan.
 
 Sistem ini membuat proses pencarian dan pengembalian barang menjadi lebih tertata, terdokumentasi, dan mudah dipantau.
 
@@ -42,7 +42,7 @@ Pengguna dapat membuat laporan dengan informasi lengkap seperti nama barang, des
 
 ### 🟢 Alur 1: Penemuan Barang
 1. Pengguna menemukan barang di lingkungan Fakultas Ilmu Komputer.
-2. Pengguna login ke sistem **Lost-Found**.
+2. Pengguna login ke sistem **Temukan**.
 3. Pengguna membuat laporan barang ditemukan.
 4. Pengguna mengisi informasi:
    - Nama barang
