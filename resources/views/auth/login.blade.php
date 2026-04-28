@@ -4,14 +4,17 @@
 
 @section('content')
 <div class="auth-box">
-    <div class="auth-brand">
-        <div class="auth-brand-icon">🔍</div>
-        <div class="auth-brand-name">Temu<span>kan</span></div>
-        <div class="auth-brand-sub">Sistem Lost &amp; Found FILKOM UB</div>
+<div class="auth-brand">
+    <div>
+        <div class="auth-brand-name">temuk<em>a</em>n.</div>
+        <div class="auth-brand-sub">Temukan — Sistem Barang Hilang</div>
     </div>
+</div>
 
-    <div class="auth-title">Selamat datang kembali!</div>
-    <div class="auth-subtitle">Masuk untuk melanjutkan ke akun kamu.</div>
+    <div class="auth-divider"></div>
+
+    <div class="auth-title">Selamat datang kembali</div>
+    <div class="auth-subtitle">Masuk ke akun kamu untuk melanjutkan.</div>
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -29,7 +32,7 @@
                 autofocus
             >
             @error('email')
-                <p class="form-error">{{ $message }}</p>
+                <span class="form-error">{{ $message }}</span>
             @enderror
         </div>
 
@@ -40,33 +43,31 @@
                 id="password"
                 name="password"
                 class="form-control"
-                placeholder="••••••••"
+                placeholder="Masukkan password kamu"
                 required
             >
             @error('password')
-                <p class="form-error">{{ $message }}</p>
+                <span class="form-error">{{ $message }}</span>
             @enderror
         </div>
 
-        <div class="form-group" style="display:flex; align-items:center; justify-content:space-between;">
-            <div class="form-check">
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Ingat saya</label>
+        <div class="form-group">
+            <div class="form-row-inline">
+                <div class="form-check">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Ingat saya</label>
+                </div>
+                @if(Route::has('password.request'))
+                    <a href="{{ route('password.request') }}" class="forgot-link">Lupa password?</a>
+                @endif
             </div>
-            @if(Route::has('password.request'))
-                <a href="{{ route('password.request') }}"
-                   style="font-size:0.82rem; color:var(--blue-600); text-decoration:none; font-weight:500;">
-                    Lupa password?
-                </a>
-            @endif
         </div>
 
-        <button type="submit" class="btn-auth">Masuk →</button>
+        <button type="submit" class="btn-auth">Masuk</button>
     </form>
 
     <div class="auth-switch">
-        Belum punya akun?
-        <a href="{{ route('register') }}">Daftar sekarang</a>
+        Belum punya akun? <a href="{{ route('register') }}">Daftar sekarang</a>
     </div>
 </div>
 @endsection

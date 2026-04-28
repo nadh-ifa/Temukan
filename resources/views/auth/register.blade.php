@@ -4,14 +4,17 @@
 
 @section('content')
 <div class="auth-box">
-    <div class="auth-brand">
-        <div class="auth-brand-icon">🔍</div>
-        <div class="auth-brand-name">Temu<span>kan</span></div>
-        <div class="auth-brand-sub">Sistem Lost &amp; Found FILKOM UB</div>
+<div class="auth-brand">
+    <div>
+        <div class="auth-brand-name">temuk<em>a</em>n.</div>
+        <div class="auth-brand-sub">Temukan — Sistem Barang Hilang</div>
     </div>
+</div>
+
+    <div class="auth-divider"></div>
 
     <div class="auth-title">Buat akun baru</div>
-    <div class="auth-subtitle">Bergabung dan mulai laporkan barang hilang atau temukan.</div>
+    <div class="auth-subtitle">Bergabung dan mulai gunakan layanan Temukan.</div>
 
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -23,13 +26,13 @@
                 id="name"
                 name="name"
                 class="form-control"
-                placeholder="Masukkan nama lengkap kamu"
+                placeholder="Masukkan nama lengkap"
                 value="{{ old('name') }}"
                 required
                 autofocus
             >
             @error('name')
-                <p class="form-error">{{ $message }}</p>
+                <span class="form-error">{{ $message }}</span>
             @enderror
         </div>
 
@@ -45,7 +48,7 @@
                 required
             >
             @error('email')
-                <p class="form-error">{{ $message }}</p>
+                <span class="form-error">{{ $message }}</span>
             @enderror
         </div>
 
@@ -60,7 +63,7 @@
                 required
             >
             @error('password')
-                <p class="form-error">{{ $message }}</p>
+                <span class="form-error">{{ $message }}</span>
             @enderror
         </div>
 
@@ -71,17 +74,16 @@
                 id="password_confirmation"
                 name="password_confirmation"
                 class="form-control"
-                placeholder="Ulangi password kamu"
+                placeholder="Ulangi password"
                 required
             >
         </div>
 
-        <button type="submit" class="btn-auth">Buat Akun →</button>
+        <button type="submit" class="btn-auth">Buat Akun</button>
     </form>
 
     <div class="auth-switch">
-        Sudah punya akun?
-        <a href="{{ route('login') }}">Masuk di sini</a>
+        Sudah punya akun? <a href="{{ route('login') }}">Masuk di sini</a>
     </div>
 </div>
 @endsection

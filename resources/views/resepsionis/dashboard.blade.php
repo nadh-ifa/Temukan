@@ -6,7 +6,7 @@
 <style>
     /* ===== HEADER ===== */
     .resep-header {
-        background: linear-gradient(135deg, #1E40AF, #1D4ED8);
+        background: linear-gradient(135deg, #C94040, #C94040);
         border-radius: var(--radius-xl);
         padding: 2rem 2.25rem;
         margin-bottom: 2rem;
@@ -19,7 +19,6 @@
     }
 
     .resep-header::after {
-        content: '🗂️';
         position: absolute;
         right: 2rem;
         top: 50%;
@@ -319,36 +318,31 @@
 {{-- HEADER --}}
 <div class="resep-header">
     <div>
-        <h1>🗂️ Dashboard Resepsionis</h1>
+        <h1>Dashboard Resepsionis</h1>
         <p>Kelola dan validasi laporan barang hilang & ditemukan.</p>
     </div>
-    <span class="resep-badge">👩‍💼 {{ auth()->user()->name }}</span>
+    <span class="resep-badge">{{ auth()->user()->name }}</span>
 </div>
 
 {{-- STATS --}}
 <div class="stats-grid">
     <div class="stat-card">
-        <div class="stat-icon-wrap icon-blue">📋</div>
         <span class="stat-value">{{ $stats['total'] }}</span>
         <span class="stat-label">Total Laporan</span>
     </div>
     <div class="stat-card">
-        <div class="stat-icon-wrap icon-yellow">⏳</div>
         <span class="stat-value" style="color:#854D0E;">{{ $stats['dilaporkan'] }}</span>
         <span class="stat-label">Menunggu Proses</span>
     </div>
     <div class="stat-card">
-        <div class="stat-icon-wrap icon-blue">🏢</div>
         <span class="stat-value" style="color:var(--blue-600);">{{ $stats['ada_di_resepsionis'] }}</span>
         <span class="stat-label">Di Resepsionis</span>
     </div>
     <div class="stat-card">
-        <div class="stat-icon-wrap icon-green">✅</div>
         <span class="stat-value" style="color:#16A34A;">{{ $stats['sudah_diambil'] }}</span>
         <span class="stat-label">Sudah Diambil</span>
     </div>
     <div class="stat-card">
-        <div class="stat-icon-wrap icon-gray">🔒</div>
         <span class="stat-value" style="color:var(--gray-500);">{{ $stats['ditutup'] }}</span>
         <span class="stat-label">Ditutup</span>
     </div>
@@ -414,7 +408,7 @@
                             </td>
                             <td>
                                 <a href="{{ route('items.show', $item->id) }}" class="btn-table-action btn-view">
-                                    Detail →
+                                    Detail
                                 </a>
                             </td>
                         </tr>
@@ -442,7 +436,7 @@
     <div>
         {{-- Perlu tindakan segera --}}
         <div class="sidebar-card">
-            <div class="sidebar-header">⚡ Perlu Tindakan</div>
+            <div class="sidebar-header">Perlu Tindakan</div>
             <div class="sidebar-body" style="padding:0.5rem 0;">
                 @forelse($pendingItems as $pi)
                 <a href="{{ route('items.show', $pi->id) }}" class="pending-item" style="padding:0.6rem 1.2rem;">
@@ -452,7 +446,7 @@
                 </a>
                 @empty
                 <p style="font-size:0.82rem; color:var(--gray-400); text-align:center; padding:1rem 1.2rem;">
-                    ✅ Semua laporan sudah diproses!
+                    Semua laporan sudah diproses!
                 </p>
                 @endforelse
             </div>
@@ -460,11 +454,11 @@
 
         {{-- Quick stats by type --}}
         <div class="sidebar-card">
-            <div class="sidebar-header">📊 Ringkasan Tipe</div>
+            <div class="sidebar-header">Ringkasan Tipe</div>
             <div class="sidebar-body">
                 <div style="margin-bottom:1rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                        <span style="font-size:0.83rem; color:var(--gray-600); font-weight:600;">🔴 Barang Hilang</span>
+                        <span style="font-size:0.83rem; color:var(--gray-600); font-weight:600;">Barang Hilang</span>
                         <span style="font-size:0.83rem; font-weight:700; color:var(--gray-800);">{{ $stats['hilang'] ?? 0 }}</span>
                     </div>
                     <div style="height:8px; background:var(--gray-100); border-radius:999px; overflow:hidden;">
@@ -473,10 +467,10 @@
                 </div>
                 <div>
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                        <span style="font-size:0.83rem; color:var(--gray-600); font-weight:600;">🔵 Barang Ditemukan</span>
+                        <span style="font-size:0.83rem; color:var(--gray-600); font-weight:600;">Barang Ditemukan</span>
                         <span style="font-size:0.83rem; font-weight:700; color:var(--gray-800);">{{ $stats['ditemukan'] ?? 0 }}</span>
                     </div>
-                    <div style="height:8px; background:var(--gray-100); border-radius:999px; overflow:hidden;">
+                    <div style="height:8px; background:var(--gray-100); border-📋radius:999px; overflow:hidden;">
                         <div style="height:100%; width:{{ $stats['total'] > 0 ? round(($stats['ditemukan'] ?? 0) / $stats['total'] * 100) : 0 }}%; background:var(--blue-400); border-radius:999px; transition:width 0.5s;"></div>
                     </div>
                 </div>
@@ -485,7 +479,7 @@
 
         {{-- Lihat semua --}}
         <a href="{{ route('items.index') }}" class="btn btn-outline" style="width:100%; justify-content:center;">
-            🔍 Lihat Semua Laporan
+            Lihat Semua Laporan
         </a>
     </div>
 
